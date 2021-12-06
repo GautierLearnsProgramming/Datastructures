@@ -13,40 +13,40 @@ template <typename T>
 class dynamicarray {
 public:
     /**
-     * Get a new dynamicarray with an empty a of initial capacity 1
+     * Get a new dynamicarray with an empty array of initial capacity 1
      */
     dynamicarray();
     /**
-     * Get a new dynamicarray initialized with the specified a
+     * Get a new dynamicarray initialized with the specified array
      */
     template <typename U>
     friend std::ostream& operator<<(std::ostream& os, dynamicarray<U> v);
 
     dynamicarray(T arr[], int size);
     /**
-     * @return The current size of the a
+     * @return The current size of the array
      */
 
     int size();
     /**
-     * Get the underlying a current capacity
-     * @return An int representing the underlying a's capacity
+     * Get the underlying array's current capacity
+     * @return An int representing the underlying array's capacity
      */
     int capacity();
     /**
      * Check is the a is empty
-     * @return A bool, true if the a is empty, false otherwise
+     * @return A bool, true if the array is empty, false otherwise
      */
     bool is_empty();
     /**
      * Get the item at the specified index
      * @param index to lookup
      * @return the item at the specified index
-     * @throw std:out_of_range if the index is above the current size of the a
+     * @throw std:out_of_range if the index is above the current size of the array
      */
     T get(int index);
     /**
-     * Add the specified item at the end of the a
+     * Add the specified item at the end of the array
      * @param item
      */
     void append(T item);
@@ -58,13 +58,13 @@ public:
      */
    void insert(int index, T item);
     /**
-     * Insert the specified item at the beginning of the a
+     * Insert the specified item at the beginning of the array
      * @param item
      */
   void prepend(T item);
     /**
-     * Get the last item and remove it from the a
-     * @return the last item of the a
+     * Get the last item and remove it from the array
+     * @return the last item of the array
      */
    T pop();
     /**
@@ -86,7 +86,7 @@ public:
 
 private:
     /**
-     * Resizes the underlying a to match the new capacity
+     * Resizes the underlying array to match the new capacity
      * @private
      * @param new_capacity
      */
@@ -105,11 +105,11 @@ private:
     */
     void check_index_in_range(int index);
     /**
-     * Current size (number of initialized elements) of the a
+     * Current size (number of initialized elements) of the array
      */
     int s;
     /**
-     * Current capacity of the underlying a
+     * Current capacity of the underlying array
      */
     int c;
     T* a;
