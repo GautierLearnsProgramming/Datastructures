@@ -87,7 +87,6 @@ public:
 private:
     /**
      * Resizes the underlying array to match the new capacity
-     * @private
      * @param new_capacity
      */
    void resize(int new_capacity);
@@ -96,23 +95,26 @@ private:
     */
    void insertion();
    /**
-    * Decrement size and decrease capaacity if necessary. Call at the end of any removal-type function.
+    * Decrement size and decrease capacity if necessary. Call at the end of any removal-type function.
     */
    void removal();
    /**
     * Check that the specified index is in range and throw an out_of_range exception otherwise
     * @param index
     */
-    void check_index_in_range(int index);
-    /**
-     * Current size (number of initialized elements) of the array
-     */
-    int s;
-    /**
-     * Current capacity of the underlying array
-     */
-    int c;
-    T* a;
+   void check_index_in_range(int index);
+   /**
+    * Current size (number of initialized elements) of the array
+    */
+   int s;
+   /**
+    * Current capacity of the underlying array
+    */
+   int c;
+   /**
+    * Pointer to the underlying array
+    */
+   T* a;
 };
 }
 
