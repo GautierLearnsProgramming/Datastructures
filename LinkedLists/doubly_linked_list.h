@@ -28,6 +28,23 @@ namespace linked_list {
         this->p = p;
     }
 
+    /**
+     * The DoublyLinkedList class, with generic type T representing the type of values that the nodes of the list can store.
+     * @class DoublyLinkedList
+     * @method int size()
+     * @method bool empty()
+     * @method void push_front(T item)
+     * @method T pop_front()
+     * @method T front()
+     * @method void push_back()
+     * @method T pop_back()
+     * @method T back()
+     * @method T value_at(int index)
+     * @method void insert(int index, T value)
+     * @method void erase(int index)
+     * @method void reverse()
+     * @tparam T 
+     */
     template<typename T>
     class DoublyLinkedList {
     public:
