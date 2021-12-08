@@ -1,3 +1,0 @@
-/home/gautier/PersonalProgrammingProjects/Datastructures/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/gautier/PersonalProgrammingProjects/Datastructures/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/gautier/PersonalProgrammingProjects/Datastructures/cmake-build-debug/CMakeFiles/Datastructures.dir
