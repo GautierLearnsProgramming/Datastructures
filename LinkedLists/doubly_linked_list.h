@@ -31,6 +31,10 @@ namespace linked_list {
     template<typename T>
     class DoublyLinkedList {
     public:
+        DoublyLinkedList(){
+            this->head = nullptr;
+            this->tail = nullptr;
+        };
         /**
          * Get the size of the list
          * @return 

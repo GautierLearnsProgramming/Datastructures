@@ -1,7 +1,8 @@
 #include <iostream>
 #include "dynamicarray_impl.h"
+#include "vector_main.h"
 
-int main() {
+int vector_main() {
     vect::dynamicarray<int> v;
     std::cout << v;
     for (int i = 0; i < 10; i++){
@@ -32,6 +33,6 @@ int main() {
 
     int arr[] = {1, 2, 3, 4, 5};
     vect::dynamicarray<int> w = vect::dynamicarray<int>(arr, 5);
-    std::cout << w;
+    std::cout << w << std::endl;
     return 0;
 }
