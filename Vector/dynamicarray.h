@@ -115,6 +115,7 @@ private:
     * Pointer to the underlying array
     */
    T* a;
+   //TODO : Add destructor/copy constructor/assignement overload and a_count int field.
 };
 }
 

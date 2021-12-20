@@ -7,26 +7,9 @@
 
 namespace linked_list {
 
+    // Helper Node class forward declaration
     template<typename T>
-    class Node {
-
-    public:
-        Node(T v, Node* n, Node* p);
-        // Node's value
-        T v;
-        // Node's next node
-        Node* n;
-        // Node's previous node
-        Node* p;
-        template <typename> friend class DoublyLinkedList;
-    };
-
-    template<typename T>
-    Node<T>::Node(T v, Node* n, Node* p) {
-        this->v = v;
-        this->n = n;
-        this->p = p;
-    }
+    class Node;
 
     /**
      * The DoublyLinkedList class, with generic type T representing the type of values that the nodes of the list can store.
@@ -43,7 +26,7 @@ namespace linked_list {
      * @method void insert(int index, T value)
      * @method void erase(int index)
      * @method void reverse()
-     * @tparam T 
+     * @tparam T
      */
     template<typename T>
     class DoublyLinkedList {
@@ -68,7 +51,7 @@ namespace linked_list {
          * Add a new element at the front of the list
          * @param item - The item of the new head node
          */
-        void push_front(T item);
+        void push_front(T value);
 
         /**
          *
@@ -162,6 +145,32 @@ namespace linked_list {
         Node<T>* tail;
     };
 
+    /**
+     * The Node class represents a member of a linked list, cointening a key and a next and previous pointers.
+     * @class Node
+     * @tparam T
+     */
+    template<typename T>
+    class Node {
+    public:
+        Node(T v, Node* n, Node* p);
+        // Node's value
+        T v;
+        // Node's next node
+        Node* n;
+        // Node's previous node
+        Node* p;
+        template <typename> friend class DoublyLinkedList;
+    };
+
+    template<typename T>
+    Node<T>::Node(T v, Node* n, Node* p) {
+        this->v = v;
+        this->n = n;
+        this->p = p;
+    }
+
+#include "doubly_linked_list.tpp"
 
 }
 #endif //DATASTRUCTURES_DOUBLY_LINKED_LIST_H

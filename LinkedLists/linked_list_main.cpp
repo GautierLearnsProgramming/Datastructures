@@ -3,7 +3,7 @@
 //
 
 #include <iostream>
-#include "doubly_linked_list_impl.h"
+#include "doubly_linked_list.h"
 #include "linked_list_main.h"
 
 using namespace linked_list;
