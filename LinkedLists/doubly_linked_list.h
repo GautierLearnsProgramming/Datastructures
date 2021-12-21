@@ -14,7 +14,7 @@ namespace linked_list {
     /**
      * The DoublyLinkedList class, with generic type T representing the type of values that the nodes of the list can store.
      * @class DoublyLinkedList
-     * @method int size()
+     * @method int getSize()
      * @method bool empty()
      * @method void push_front(T item)
      * @method T pop_front()
@@ -36,7 +36,7 @@ namespace linked_list {
             this->tail = nullptr;
         };
         /**
-         * Get the size of the list
+         * Get the getSize of the list
          * @return 
          */
         int size();
@@ -63,7 +63,7 @@ namespace linked_list {
          * Return the value at the given index
          * @param index 
          * @return 
-         * @throw out_of_range exception if index is greater than the size of the list
+         * @throw out_of_range exception if index is greater than the getSize of the list
          */
         T value_at(int index);
 
@@ -101,14 +101,14 @@ namespace linked_list {
          * Insert a node containing the value at the specified index.
          * @param index 
          * @param value 
-         * @throw out_of_range exception if the index is greater than the size of the list
+         * @throw out_of_range exception if the index is greater than the getSize of the list
          */
         void insert(int index, T value);
 
         /**
          * Removes the node at the specified index
          * @param index 
-         * @throw out_of_range exception if the index is greater than the size of the list
+         * @throw out_of_range exception if the index is greater than the getSize of the list
          */
         void erase(int index);
 

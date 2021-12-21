@@ -9,40 +9,43 @@
 namespace vect{
 
 template <typename T>
-
-class dynamicarray {
+class DynamicArray {
 public:
-    /**
-     * Get a new dynamicarray with an empty array of initial capacity 1
-     */
-    dynamicarray();
+    // Constructors
+    DynamicArray();
+    DynamicArray(T arr[], int size);
+
+    // Rule of three
+    ~DynamicArray();
+    DynamicArray(const DynamicArray<T>& other);
+    DynamicArray& operator=(const DynamicArray<T>& other);
+
     /**
      * Get a new dynamicarray initialized with the specified array
      */
     template <typename U>
-    friend std::ostream& operator<<(std::ostream& os, dynamicarray<U> v);
+    friend std::ostream& operator<<(std::ostream& os, DynamicArray<U> v);
 
-    dynamicarray(T arr[], int size);
     /**
-     * @return The current size of the array
+     * @return The current getSize of the array
      */
 
-    int size();
+    int getSize();
     /**
-     * Get the underlying array's current capacity
-     * @return An int representing the underlying array's capacity
+     * Get the underlying array's current getCapacity
+     * @return An int representing the underlying array's getCapacity
      */
-    int capacity();
+    int getCapacity();
     /**
      * Check is the a is empty
      * @return A bool, true if the array is empty, false otherwise
      */
-    bool is_empty();
+    bool isEmpty();
     /**
      * Get the item at the specified index
      * @param index to lookup
      * @return the item at the specified index
-     * @throw std:out_of_range if the index is above the current size of the array
+     * @throw std:out_of_range if the index is above the current getSize of the array
      */
     T get(int index);
     /**
@@ -54,7 +57,7 @@ public:
      * Insert the specified item at the specified index.
      * @param index
      * @param item
-     * @throws std:out_of_range if the index is more than the current size
+     * @throws std:out_of_range if the index is more than the current getSize
      */
    void insert(int index, T item);
     /**
@@ -86,16 +89,16 @@ public:
 
 private:
     /**
-     * Resizes the underlying array to match the new capacity
+     * Resizes the underlying array to match the new getCapacity
      * @param new_capacity
      */
    void resize(int new_capacity);
    /**
-    * Increment size and increase capacity if necessary. Call at the beginning of any insertion-type function.
+    * Increment getSize and increase getCapacity if necessary. Call at the beginning of any insertion-type function.
     */
    void insertion();
    /**
-    * Decrement size and decrease capacity if necessary. Call at the end of any removal-type function.
+    * Decrement getSize and decrease getCapacity if necessary. Call at the end of any removal-type function.
     */
    void removal();
    /**
@@ -103,18 +106,12 @@ private:
     * @param index
     */
    void check_index_in_range(int index);
-   /**
-    * Current size (number of initialized elements) of the array
-    */
-   int s;
-   /**
-    * Current capacity of the underlying array
-    */
-   int c;
-   /**
-    * Pointer to the underlying array
-    */
+
+
+   int size{};
+   int capacity;
    T* a;
+   int* a_count;
    //TODO : Add destructor/copy constructor/assignement overload and a_count int field.
 };
 }

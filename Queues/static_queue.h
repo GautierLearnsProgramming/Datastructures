@@ -25,7 +25,7 @@ template<typename T>
 class StaticQueue{
 public:
     /**
-     * Constructor for the StaticQueue class, returns a static queue with the given capacity
+     * Constructor for the StaticQueue class, returns a static queue with the given getCapacity
      * @param capacity
      */
     explicit StaticQueue(int capacity);
@@ -79,21 +79,21 @@ private:
      */
     int wi;
     /**
-     * Current size
+     * Current getSize
      */
     int s;
     /**
-    * Maximum capacity
+    * Maximum getCapacity
     */
     int c;
     /**
-     * Increment modulo the capacity, and return the incremented value
+     * Increment modulo the getCapacity, and return the incremented value
      * @param i
      * @return
      */
     int increment(int i);
     /**
-     * Decrement modulo the capacity + 1, and return the decremented value
+     * Decrement modulo the getCapacity + 1, and return the decremented value
      * @param i
      * @return
      */

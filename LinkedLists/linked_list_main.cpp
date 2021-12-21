@@ -19,7 +19,7 @@ int linked_list_main() {
     b->push_back(3);
     b->push_back(4);
     std::cout << *b;
-    std::cout << "Current size of the list : " << b->size() << std::endl;
+    std::cout << "Current getSize of the list : " << b->size() << std::endl;
     std::cout << "List empty ?" << b->empty() << std::endl;
     std::cout << "Value at 2 : " << b->value_at(2) << std::endl;
     std::cout << "pop front " << b-> pop_front() << std::endl;

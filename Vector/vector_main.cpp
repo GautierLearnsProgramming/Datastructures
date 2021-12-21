@@ -3,7 +3,7 @@
 #include "vector_main.h"
 
 int vector_main() {
-    vect::dynamicarray<int> v;
+    vect::DynamicArray<int> v;
     std::cout << v;
     for (int i = 0; i < 10; i++){
         v.append(i);
@@ -32,7 +32,7 @@ int vector_main() {
     std::cout << "Item index: " << v.find(2) << std::endl;
 
     int arr[] = {1, 2, 3, 4, 5};
-    vect::dynamicarray<int> w = vect::dynamicarray<int>(arr, 5);
+    vect::DynamicArray<int> w = vect::DynamicArray<int>(arr, 5);
     std::cout << w << std::endl;
     return 0;
 }

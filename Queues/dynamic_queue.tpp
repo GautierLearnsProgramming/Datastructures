@@ -77,8 +77,8 @@ bool DynamicQueue<T>::empty() {
 
 template<typename T>
 std::ostream &operator<<(std::ostream &os, DynamicQueue<T> q) {
-    os << "size : " << q.s << std::endl;
-    os << "capacity : " << q.c << std::endl;
+    os << "getSize : " << q.s << std::endl;
+    os << "getCapacity : " << q.c << std::endl;
     os << *q.q;
     return os;
 }
