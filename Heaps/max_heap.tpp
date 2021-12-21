@@ -103,6 +103,11 @@ void MaxHeap<T>::remove(T element) {
     }
 }
 
+template<typename T>
+int MaxHeap<T>::getSize() {
+    return size;
+}
+
 // Operators
 template<typename U>
 std::ostream &operator<<(std::ostream &os, const MaxHeap<U> &maxHeap) {
@@ -211,6 +216,18 @@ MaxHeap<T> &MaxHeap<T>::operator=(const MaxHeap &other) {
         *vector_count += 1;
     }
     return *this;
+}
+
+// Non class methods
+template<typename T>
+Vector<T>* heap_sort(Vector<T>* unsorted){
+    auto* heap = new MaxHeap<T>(unsorted);
+    auto* ret = new Vector<T>();
+    while(!heap->isEmpty()){
+        ret->append(heap->popMax());
+    }
+    delete heap;
+    return ret;
 }
 
 #endif

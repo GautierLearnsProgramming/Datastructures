@@ -193,4 +193,12 @@ void Vector<T>::set(int index, T item) {
     a[index] = item;
 }
 
+template<typename T>
+Vector<T>* Vector<T>::clone() {
+    auto* ret = new Vector<T>();
+    for(int i = 0; i < size; i++){
+        ret->append(a[i]);
+    }
+    return ret;
+}
 #endif

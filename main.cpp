@@ -35,5 +35,9 @@ int main() {
     heap->popMax();
     std::cout << *heap << std::endl;
     std::cout << "max " << heap->getMax() << std::endl;
+
+    auto* to_sort = new Vector<int>(arr, 12);
+    auto* sorted = heap_sort(to_sort);
+    std::cout << *sorted;
     return 0;
 }

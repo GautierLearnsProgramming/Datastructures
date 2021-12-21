@@ -85,6 +85,7 @@ public:
      */
     int find(T item);
 
+    Vector<T>* clone();
 private:
     /**
      * Resizes the underlying array to match the new getCapacity

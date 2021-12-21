@@ -8,50 +8,53 @@
 #include <iostream>
 #include <cmath>
 
+template<typename T>
+class MaxHeap {
+public:
+    // Constructors
+    explicit MaxHeap(Vector<T>* unsorted);
+    MaxHeap();
 
+    // Methods
+    bool isEmpty();
+    void insert(T element);
+    T getMax();
+    T popMax();
+    void remove(T element);
+    void remove_at_index(int index);
+    int getSize();
 
-    template<typename T>
-    class MaxHeap {
-    public:
-        // Constructors
-        explicit MaxHeap(Vector<T>* unsorted);
-        MaxHeap();
+    // Rule of three
+    ~MaxHeap();
+    MaxHeap(const MaxHeap<T>& other);
+    MaxHeap& operator=(const MaxHeap& other);
 
-        // Methods
-        bool isEmpty();
-        void insert(T element);
-        T getMax();
-        T popMax();
-        void remove(T element);
-        void remove_at_index(int index);
+    //Operators
+    template<typename U>
+    friend std::ostream& operator<<(std::ostream& os, const MaxHeap<U>& maxHeap);
 
-        // Rule of three
-        ~MaxHeap();
-        MaxHeap(const MaxHeap<T>& other);
-        MaxHeap& operator=(const MaxHeap& other);
+    // Friends
+    template<typename U>
+    friend Vector<U>* heap_sort(Vector<U>* unsorted);
+private:
+    // Helpers
+    int left(int index);
+    int right(int index);
+    int parent(int index);
 
-        //Operators
-        template<typename U>
-        friend std::ostream& operator<<(std::ostream& os, const MaxHeap<U>& maxHeap);
-    private:
-        // Helpers
-        int left(int index);
-        int right(int index);
-        int parent(int index);
-
-        struct IndexedElement {
-            int index;
-            T* element;
-        };
-        IndexedElement max(IndexedElement el1, IndexedElement el2);
-
-        void max_heapify(int index);
-
-        // Fields
-        Vector<T>* vector;
-        int* vector_count;
-        int size;
+    struct IndexedElement {
+        int index;
+        T* element;
     };
+    IndexedElement max(IndexedElement el1, IndexedElement el2);
+
+    void max_heapify(int index);
+
+    // Fields
+    Vector<T>* vector;
+    int* vector_count;
+    int size;
+};
 
 #include "max_heap.tpp"
 #endif //DATASTRUCTURES_MAX_HEAP_H
