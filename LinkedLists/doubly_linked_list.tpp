@@ -6,7 +6,6 @@
 #ifndef DATASTRUCTURES_DOUBLY_LINKED_LIST_IMPL_H
 #define DATASTRUCTURES_DOUBLY_LINKED_LIST_IMPL_H
 
-namespace gb_datastructures {
     template<typename T>
     int DoublyLinkedList<T>::size() {
         //Initialize size
@@ -271,5 +270,5 @@ namespace gb_datastructures {
         }
         return false;
     }
-}
+
 #endif //DATASTRUCTURES_DOUBLY_LINKED_LIST_IMPL_H

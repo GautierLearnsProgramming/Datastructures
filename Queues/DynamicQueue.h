@@ -7,9 +7,7 @@
 #include <iostream>
 #include "static_queue.h"
 
-using namespace gb_datastructures;
 
-namespace gb_datastructures {
     template<typename T>
     class DynamicQueue {
     public:
@@ -36,6 +34,6 @@ namespace gb_datastructures {
         int c;
     };
 
-}
 
+#include "DynamicQueue.tpp"
 #endif //DATASTRUCTURES_DYNAMICQUEUE_H

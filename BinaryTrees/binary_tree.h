@@ -7,7 +7,6 @@
 #include <iostream>
 #include "../Queues/DynamicQueue.h"
 
-namespace gb_datastructures {
 
     template<typename T>
     class Node;
@@ -83,6 +82,6 @@ namespace gb_datastructures {
         T value;
     };
 
-}
 
+#include "binary_tree.tpp"
 #endif //DATASTRUCTURES_BINARY_TREE_H

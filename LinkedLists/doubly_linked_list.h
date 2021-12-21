@@ -5,7 +5,6 @@
 #ifndef DATASTRUCTURES_DOUBLY_LINKED_LIST_H
 #define DATASTRUCTURES_DOUBLY_LINKED_LIST_H
 
-namespace gb_datastructures {
 
     // Helper Node class forward declaration
     template<typename T>
@@ -169,6 +168,6 @@ namespace gb_datastructures {
         this->n = n;
         this->p = p;
     }
-}
 
+#include "doubly_linked_list.tpp"
 #endif //DATASTRUCTURES_DOUBLY_LINKED_LIST_H

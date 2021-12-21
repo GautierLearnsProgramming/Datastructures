@@ -3,8 +3,6 @@
 #define BINARY_TREE_IMPL
 #include "binary_tree.h"
 
-namespace gb_datastructures {
-
     template<typename T>
     BinaryTree<T>::BinaryTree() {
         root_count = nullptr;
@@ -266,7 +264,7 @@ namespace gb_datastructures {
     std::ostream &operator<<(std::ostream& os, const BinaryTree<T>& binaryTree) {
         // Make a breadth first traversal and print each layer of the binary tree
         int current_depth = 0;
-        gb_datastructures::DynamicQueue<NodeAndDepth<T>>* queue = new gb_datastructures::DynamicQueue<NodeAndDepth<T>>();
+        auto* queue = new DynamicQueue<NodeAndDepth<T>>();
         queue->queue({*binaryTree.root, 0});
         while(!queue->empty()){
             NodeAndDepth<T> s = queue->dequeue();
@@ -290,7 +288,7 @@ namespace gb_datastructures {
 
     template<typename T>
     Node<T> *BinaryTree<T>::search(T value) {
-        if(root == nullptr) return;
+        if(root == nullptr) return nullptr;
         Node<T>* node = *root;
         while(node != nullptr){
             if (node->getValue == value) return node;
@@ -302,6 +300,5 @@ namespace gb_datastructures {
         }
         return nullptr;
     }
-}
 
 #endif

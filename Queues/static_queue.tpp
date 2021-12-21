@@ -3,7 +3,6 @@
 #define STATIC_QUEUE_IMPL
 #include "static_queue.h"
 
-namespace gb_datastructures {
     template<typename T>
     StaticQueue<T>::StaticQueue(int capacity) {
         a = new T[capacity + 1];
@@ -80,5 +79,5 @@ namespace gb_datastructures {
         os << std::endl;
         return os;
     }
-}
+
 #endif

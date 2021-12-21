@@ -5,9 +5,6 @@
 
 #ifndef VECTOR_VECTOR_H
 #define VECTOR_VECTOR_H
-
-namespace gb_datastructures{
-
 template <typename T>
 class Vector {
 public:
@@ -52,6 +49,7 @@ public:
      * Add the specified item at the end of the array
      * @param item
      */
+     void set(int index, T item);
     void append(T item);
     /**
      * Insert the specified item at the specified index.
@@ -112,8 +110,7 @@ private:
    int capacity;
    T* a;
    int* a_count;
-   //TODO : Add destructor/copy constructor/assignement overload and a_count int field.
 };
-}
 
+#include "Vector.tpp"
 #endif //VECTOR_VECTOR_H

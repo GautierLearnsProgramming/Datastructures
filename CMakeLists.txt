@@ -1,15 +1,14 @@
 cmake_minimum_required(VERSION 3.19)
 project(Datastructures)
 
-set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD 17)
 
 add_executable(Datastructures
         main.cpp
-        LinkedLists/linked_list_main.cpp LinkedLists/doubly_linked_list.h LinkedLists/doubly_linked_list.tpp
-        Vector/vector_main.cpp Vector/Vector.h Vector/Vector.tpp
-        Vector/vector_main.h LinkedLists/linked_list_main.h
+        LinkedLists/doubly_linked_list.h LinkedLists/doubly_linked_list.tpp
+        Vector/Vector.h Vector/Vector.tpp
         Queues/static_queue.h Queues/static_queue.tpp
-        Queues/DynamicQueue.h Queues/DynamicQueue.tpp Queues/static_queue_demo.cpp Queues/dynamic_queue_demo.cpp
+        Queues/DynamicQueue.h Queues/DynamicQueue.tpp
         HashTables/hashmap.h HashTables/hashmap.tpp Algorithms/binarysearch.cpp Algorithms/binarysearch.h
         BinaryTrees/binary_tree.h  BinaryTrees/binary_tree.tpp
         Heaps/max_heap.h Heaps/max_heap.tpp)

@@ -4,7 +4,6 @@
 #define DYNAMIC_QUEUE_IMPL
 #include "DynamicQueue.h"
 
-namespace gb_datastructures {
     template<typename T>
     DynamicQueue<T>::DynamicQueue() {
         q = new StaticQueue<T>(1);
@@ -97,5 +96,5 @@ namespace gb_datastructures {
         os << *q.q;
         return os;
     }
-}
+
 #endif

@@ -11,7 +11,6 @@
 /*
  * The goal of this implementation is to define a static queue implementation with a circular buffer (see : https://en.wikipedia.org/wiki/Circular_buffer).
  */
-namespace gb_datastructures {
     /**
      * A static queue class implement the basic methods of the queue collection
      * @method void queue(T key)
@@ -97,6 +96,6 @@ namespace gb_datastructures {
          * @return
          */
     };
-}
 
+#include "static_queue.tpp"
 #endif //DATASTRUCTURES_STATIC_QUEUE_H

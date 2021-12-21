@@ -1,12 +1,17 @@
 @startuml
-class MaxHeap<T implements greater than> {
--Vector<T> vector
+class MaxHeap<T implements greater than, ==> {
+-Vector<T>* vector
 -int size
+
++MaxHeap(Vector<T> elements)
++MaxHeap()
+
 +T getMax()
 +T popMax()
 +insert(T element)
-+MaxHeap buildMaxHeap(Vector<T> elements)
--remove(int index)
++remove_at_index(int index)
++remove(T element)
+
 -void maxHeapify(int index)
 }
 
