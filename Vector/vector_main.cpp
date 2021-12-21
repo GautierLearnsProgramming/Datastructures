@@ -1,9 +1,9 @@
 #include <iostream>
-#include "dynamicarray_impl.h"
+#include "Vector.tpp"
 #include "vector_main.h"
 
 int vector_main() {
-    vect::DynamicArray<int> v;
+    gb_datastructures::Vector<int> v;
     std::cout << v;
     for (int i = 0; i < 10; i++){
         v.append(i);
@@ -32,7 +32,7 @@ int vector_main() {
     std::cout << "Item index: " << v.find(2) << std::endl;
 
     int arr[] = {1, 2, 3, 4, 5};
-    vect::DynamicArray<int> w = vect::DynamicArray<int>(arr, 5);
+    gb_datastructures::Vector<int> w = gb_datastructures::Vector<int>(arr, 5);
     std::cout << w << std::endl;
     return 0;
 }

@@ -2,12 +2,14 @@
 // Created by gautier on 06/12/2021.
 //
 
-#include "DynamicArray.h"
+#ifndef DYNAMIC_ARRAY_IMPL
+#define DYNAMIC_ARRAY_IMPL
+#include "Vector.h"
 
-namespace vect {
+namespace gb_datastructures {
 
     template<typename T>
-    DynamicArray<T>::~DynamicArray() {
+    Vector<T>::~Vector() {
         *a_count -= 1;
         if(*a_count <= 0){
             delete[] a;
@@ -16,14 +18,14 @@ namespace vect {
     }
 
     template<typename T>
-    DynamicArray<T>::DynamicArray(const DynamicArray<T> &other):
+    Vector<T>::Vector(const Vector<T> &other):
     a(other.a), a_count(other.a_count), size(other.size), capacity(other.capacity)
     {
         *a_count += 1;
     }
 
     template<typename T>
-    DynamicArray<T> &DynamicArray<T>::operator=(const DynamicArray<T> &other) {
+    Vector<T> &Vector<T>::operator=(const Vector<T> &other) {
         if(&other != this){
             *a_count -= 1;
             if(*a_count <= 0){
@@ -42,7 +44,7 @@ namespace vect {
 
 
     template<typename T>
-    DynamicArray<T>::DynamicArray() {
+    Vector<T>::Vector() {
         a = new T[1];
         a_count = new int;
         *a_count = 1;
@@ -51,7 +53,7 @@ namespace vect {
     }
 
     template<typename T>
-    DynamicArray<T>::DynamicArray(T arr[], int size) {
+    Vector<T>::Vector(T arr[], int size) {
         a_count = new int;
         *a_count = 1;
         capacity = 1;
@@ -66,33 +68,33 @@ namespace vect {
     }
 
     template<typename T>
-    int DynamicArray<T>::getSize() {
+    int Vector<T>::getSize() {
         return this->current_size;
     }
 
     template<typename T>
-    int DynamicArray<T>::getCapacity() {
+    int Vector<T>::getCapacity() {
         return this->current_capacity;
     }
 
     template<typename T>
-    bool DynamicArray<T>::isEmpty() {
+    bool Vector<T>::isEmpty() {
         return size == 0;
     }
 
     template<typename T>
-    T DynamicArray<T>::get(int index) {
+    T Vector<T>::get(int index) {
         return a[index];
     }
 
     template<typename T>
-    void DynamicArray<T>::append(T item) {
+    void Vector<T>::append(T item) {
         insertion();
         a[size - 1] = item;
     }
 
     template<typename T>
-    std::ostream &operator<<(std::ostream &os, DynamicArray<T> v) {
+    std::ostream &operator<<(std::ostream &os, Vector<T> v) {
         os << "Size: " << v.size << std::endl;
         os << "Capacity: " << v.capacity << std::endl;
         os << "Content: ";
@@ -104,7 +106,7 @@ namespace vect {
     }
 
     template<typename T>
-    void DynamicArray<T>::resize(int new_capacity) {
+    void Vector<T>::resize(int new_capacity) {
         T *n = new T[new_capacity];
         for (int i = 0; i < size; i++){
             n[i] = a[i];
@@ -115,7 +117,7 @@ namespace vect {
     }
 
     template<typename T>
-    void DynamicArray<T>::insert(int index, T item) {
+    void Vector<T>::insert(int index, T item) {
         check_index_in_range(index);
         insertion();
         //Push every element after the index of one to the right
@@ -127,32 +129,32 @@ namespace vect {
     }
 
     template<typename T>
-    void DynamicArray<T>::insertion() {
+    void Vector<T>::insertion() {
         if (size + 1 > capacity) resize(2 * capacity);
         size++;
     }
 
     template<typename T>
-    void DynamicArray<T>::removal() {
+    void Vector<T>::removal() {
         a[size] = NULL;
         if ((size - 1 <= capacity / 4) && (size - 1) > 0) resize(capacity / 2);
         size--;
     }
 
     template<typename T>
-    void DynamicArray<T>::prepend(T item) {
+    void Vector<T>::prepend(T item) {
         insert(0, item);
     }
 
     template<typename T>
-    T DynamicArray<T>::pop() {
+    T Vector<T>::pop() {
         T item = a[size - 1];
         removal();
         return item;
     }
 
     template<typename T>
-    void DynamicArray<T>::removeIndex(int index) {
+    void Vector<T>::removeIndex(int index) {
         check_index_in_range(index);
         for(int i = index; i < size; i++) {
             a[i] = a[i+1];
@@ -161,12 +163,12 @@ namespace vect {
     }
 
     template<typename T>
-    void DynamicArray<T>::check_index_in_range(int index) {
+    void Vector<T>::check_index_in_range(int index) {
         if (index > size) throw std::out_of_range("Index is out of range of the current array");
     }
 
     template<typename T>
-    void DynamicArray<T>::remove(T item) {
+    void Vector<T>::remove(T item) {
         for (int i = 0; i < size; i++){
             if(a[i] == item){
                 removeIndex(i);
@@ -176,7 +178,7 @@ namespace vect {
     }
 
     template<typename T>
-    int DynamicArray<T>::find(T item) {
+    int Vector<T>::find(T item) {
         for (int i = 0; i < size; i++){
             if (a[i] == item){
                 return i;
@@ -184,7 +186,5 @@ namespace vect {
         }
         return -1;
     }
-
-
-
 }
+#endif

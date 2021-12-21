@@ -2,7 +2,7 @@
 // Created by gautier on 09/12/2021.
 //
 #include <iostream>
-#include "dynamic_queue.h"
+#include "DynamicQueue.h"
 
 void static_queue_demo(){
     auto* q = new StaticQueue<int>(4);

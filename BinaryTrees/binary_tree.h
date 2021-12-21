@@ -5,9 +5,9 @@
 #ifndef DATASTRUCTURES_BINARY_TREE_H
 #define DATASTRUCTURES_BINARY_TREE_H
 #include <iostream>
-#include "../Queues/dynamic_queue.h"
+#include "../Queues/DynamicQueue.h"
 
-namespace binary_tree {
+namespace gb_datastructures {
 
     template<typename T>
     class Node;
@@ -82,8 +82,6 @@ namespace binary_tree {
         Node *right;
         T value;
     };
-
-#include "binary_tree.tpp"
 
 }
 

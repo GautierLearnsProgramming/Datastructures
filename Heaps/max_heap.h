@@ -4,12 +4,16 @@
 
 #ifndef DATASTRUCTURES_MAX_HEAP_H
 #define DATASTRUCTURES_MAX_HEAP_H
-#include "../Vector/DynamicArray.h"
+#include "../Vector/Vector.h"
 
-template<typename T>
-class MaxHeap{
+namespace gb_datastructures {
 
-};
+    template<typename T>
+    class MaxHeap {
+    private:
 
-#include "max_heap.tpp"
+    };
+
+}
+
 #endif //DATASTRUCTURES_MAX_HEAP_H

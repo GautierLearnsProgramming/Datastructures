@@ -6,25 +6,25 @@
 #ifndef VECTOR_VECTOR_H
 #define VECTOR_VECTOR_H
 
-namespace vect{
+namespace gb_datastructures{
 
 template <typename T>
-class DynamicArray {
+class Vector {
 public:
     // Constructors
-    DynamicArray();
-    DynamicArray(T arr[], int size);
+    Vector();
+    Vector(T arr[], int size);
 
     // Rule of three
-    ~DynamicArray();
-    DynamicArray(const DynamicArray<T>& other);
-    DynamicArray& operator=(const DynamicArray<T>& other);
+    ~Vector();
+    Vector(const Vector<T>& other);
+    Vector& operator=(const Vector<T>& other);
 
     /**
      * Get a new dynamicarray initialized with the specified array
      */
     template <typename U>
-    friend std::ostream& operator<<(std::ostream& os, DynamicArray<U> v);
+    friend std::ostream& operator<<(std::ostream& os, Vector<U> v);
 
     /**
      * @return The current getSize of the array

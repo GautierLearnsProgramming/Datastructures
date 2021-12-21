@@ -2,14 +2,14 @@
 // Created by gautier on 09/12/2021.
 //
 
-#ifndef DATASTRUCTURES_DYNAMIC_QUEUE_H
-#define DATASTRUCTURES_DYNAMIC_QUEUE_H
+#ifndef DATASTRUCTURES_DYNAMICQUEUE_H
+#define DATASTRUCTURES_DYNAMICQUEUE_H
 #include <iostream>
 #include "static_queue.h"
 
-using namespace static_queue;
+using namespace gb_datastructures;
 
-namespace dynamic_queue {
+namespace gb_datastructures {
     template<typename T>
     class DynamicQueue {
     public:
@@ -36,7 +36,6 @@ namespace dynamic_queue {
         int c;
     };
 
-#include "dynamic_queue.tpp"
 }
 
-#endif //DATASTRUCTURES_DYNAMIC_QUEUE_H
+#endif //DATASTRUCTURES_DYNAMICQUEUE_H

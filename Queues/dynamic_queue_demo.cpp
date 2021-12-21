@@ -3,9 +3,9 @@
 //
 
 #include "static_queue.h"
-#include "dynamic_queue.h"
+#include "DynamicQueue.h"
 
-using namespace dynamic_queue;
+using namespace gb_datastructures;
 
 void dynamic_queue_demo(){
     auto *dq = new DynamicQueue<int>();

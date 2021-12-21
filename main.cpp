@@ -4,8 +4,9 @@
 
 #include "LinkedLists/linked_list_main.h"
 #include "Vector/vector_main.h"
+#include "Vector/Vector.h"
 #include "Queues/static_queue.h"
-#include "Queues/dynamic_queue.h"
+#include "Queues/DynamicQueue.h"
 #include "HashTables/hashmap.h"
 #include "Algorithms/binarysearch.h"
 #include "BinaryTrees/binary_tree.h"
@@ -15,7 +16,7 @@ void print(int i){
 }
 
 int main(){
-    auto* binaryTree = new binary_tree::BinaryTree<int>();
+    auto* binaryTree = new gb_datastructures::BinaryTree<int>();
     binaryTree->insert(5);
     std::cout << *binaryTree;
     binaryTree->insert(3);
