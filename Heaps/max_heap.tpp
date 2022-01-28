@@ -14,12 +14,12 @@ MaxHeap<T>::MaxHeap() {
 
 template<typename T>
 MaxHeap<T>::MaxHeap(Vector<T>* unsorted) {
-    vector = unsorted;
+    vector = unsorted->clone();
     size = unsorted->getSize();
     vector_count = new int;
     *vector_count = 1;
 
-    for(int i = size/2; i >= 0; i--){
+    for(int i = parent(i); i >= 0; i--){
         max_heapify(i);
     }
 }

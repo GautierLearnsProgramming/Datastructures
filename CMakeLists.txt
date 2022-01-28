@@ -11,4 +11,4 @@ add_executable(Datastructures
         Queues/DynamicQueue.h Queues/DynamicQueue.tpp
         HashTables/hashmap.h HashTables/hashmap.tpp Algorithms/binarysearch.cpp Algorithms/binarysearch.h
         BinaryTrees/binary_tree.h  BinaryTrees/binary_tree.tpp
-        Heaps/max_heap.h Heaps/max_heap.tpp)
+        Heaps/max_heap.h Heaps/max_heap.tpp Algorithms/sorting.cpp Algorithms/shuffle.cpp Algorithms/shuffle.h Algorithms/stopwatch.cpp Algorithms/stopwatch.h)
